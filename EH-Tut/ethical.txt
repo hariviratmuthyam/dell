@@ -1,0 +1,111 @@
+ifconfig -> basic network details
+iwconfig -> wireless network interfaces
+ping     -> verify communication over network
+arp      -> address resolutionn protocol [ip address ->mapping ->mac address]
+netstat  -> stats on all network activities , ports
+route    -> fetches routing table
+
+=======================================================
+grep	-> searches for patterns
+tr		-> translating or deleting chars
+cat 	-> [create, view, concatenate ] files, redirect output in terminal or files.
+cut		-> extract section from each line of input from files
+echo	-> print on console
+
+=======================================================
+if-else in bash ->
+
+if[expression]
+then
+stmnt if true
+else
+stmnt if false
+fi
+
+========================================================
+for in bash ->
+
+for var in 1 2 3 4 5
+do 
+	stmnt for var
+done
+
+========================================================
+ipsweep.sh->
+#!/bin/bash
+for ip in 'seq 1 254'; do ping -c $1.$ip | grep '64bytes' | cut -d ''-f 4 | tr -d':'& done
+
+========================================================
+MAC 	-> Media Access Control Address
+ipconfig /all #windows
+ifconfig -> kali
+
+MAC address change  ->
+1.Disable interface
+2.Change MAC
+3.Enable interface
+
+=========================================================
+Linux
+
+lets say interface is eth0
+
+->ifconfig eth0 down
+->ifconfig eth0 hw ether 11:22:33:44:55:66             #here hw is hardware interface with fake mac 11:22:.........
+->ifconfig eth0 up
+
+Windows
+
+download technitium
+execute
+select wifi and random mac click change now
+
+==========================================================
+Gathering info:
+1.Footprinting
+	Domain name
+	IP Address
+	Phone Numbers
+	Emails
+	https://archive.org/ ->download to scrape info from sites
+	https://who.is/ ->search whois database to look up domain and IP owner info
+	https://pipl.com/ ->search for person personal leaked info on social media
+	https://www.insecam.org/en/ -> watch live cameras
+	https://www.exploit-db.com/ ->IoT devices, usernames ,passwords, etc
+	https://www.cyberforensics.in/OnlineEmailTracer/index.aspx ->track email sender's identity
+	
+	
+	
+2.Scanning
+	NMAP and ZenMAP are tools for scanning phase of Ethical hacking.
+	NMAP -> Cli
+	ZenMAP -> Gui
+
+	NMAP and ZenMAP are same
+	Network discovery tool and security auditing tool
+	https://nmap.org/book/man-os-detection.html ->detect os type/version of target host
+
+	cmd-> nmap -O 192.168.1.101 <-ip address of target
+
+	Scanning opened ports TCP/UDP
+
+	cmd-> nmap -p 1-65535 -T4 192.168.1.101 <- target ip
+	
+	stealth scanning
+	
+	cmd-> nmap -sS -T4 192.168.1.101 
+	
+	
+
+
+3.Gaining access
+4.Maintaining access
+5.Clearing Tracks
+===========================================================
+
+
+
+
+
+
+
